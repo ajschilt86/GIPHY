@@ -1,17 +1,47 @@
-$.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function (response) {
-    console.log(queryURL);
-    console.table(response);
-   
+$(document).ready(function () {
 
-   
-    $(".results").html("<div>Title: " + response.Title + "</div>")
-    $(".results").append("<div>Year: " + response.Year + "</div>")
-    $(".results").append("<div>Rating: " + response.Year + "</div>")
-    $(".results").append("<div>Plot: " + response.Plot + "</div>")
-    $(".results").append("<img src='" + response.Poster + "'>")
 
+
+
+  
+
+  var animals = ["tiger", "lion", "zebra", "rhino"];
+
+  var userChoice = animals[0];
+
+
+  for (var i = 0; i < animals.length; i++) {
+
+    $(".buttons").append("<button>" + animals[i] + "</button>")
+
+  }  
+
+
+  $(".buttons button").click(function () {
+    userChoice = $(this).text();
+    console.log(userChoice);
+    $(".gifs").empty();
+
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userChoice + "&api_key=tnF75nCvZOzJEAnV6pFNBwlI8svFoFFN";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(queryURL);
+      console.table(response);
+
+
+      for (var i = 0; i < 6; i++) {
+        
+        $(".gifs").append("<img src='" + response.data[i].images.fixed_height.url + "'>")
+      }
+
+    });
   });
 
+
+
+
+
+});
