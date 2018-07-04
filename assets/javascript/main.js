@@ -1,43 +1,64 @@
 $(document).ready(function () {
 
-
-
-
-  
-
   var animals = ["tiger", "lion", "zebra", "rhino"];
 
   var userChoice = animals[0];
 
+  //shows buttons on top//
+  function renderButtons() {
+    $(".buttons").empty();
+    for (var i = 0; i < animals.length; i++) {
 
-  for (var i = 0; i < animals.length; i++) {
+      $(".buttons").append("<button>" + animals[i] + "</button>")
+      gifLoop();
+    }
+  }
 
-    $(".buttons").append("<button>" + animals[i] + "</button>")
+  renderButtons();
+  function gifLoop() {
+    $(".buttons button").click(function () {
+      userChoice = $(this).text();
+      console.log(userChoice);
+      $(".gifs").empty();
 
-  }  
+      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userChoice + "&api_key=tnF75nCvZOzJEAnV6pFNBwlI8svFoFFN";
 
-
-  $(".buttons button").click(function () {
-    userChoice = $(this).text();
-    console.log(userChoice);
-    $(".gifs").empty();
-
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userChoice + "&api_key=tnF75nCvZOzJEAnV6pFNBwlI8svFoFFN";
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      console.log(queryURL);
-      console.table(response);
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
+        console.log(queryURL);
+        console.table(response);
 
 
-      for (var i = 0; i < 6; i++) {
-        
-        $(".gifs").append("<img src='" + response.data[i].images.fixed_height.url + "'>")
-      }
+        for (var i = 0; i < 10; i++) {
 
+          $(".gifs").append("<img src='" + response.data[i].images.fixed_height.url + "'>");
+          $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
+
+        }        
+
+      });
     });
+  }
+
+
+  //add animal button
+  $("#add-animal").on("click", function (event) {
+    event.preventDefault();
+
+
+    var addAnimal = $("#animal-input").val().trim();
+
+
+    animals.push(addAnimal);
+    console.log(animals);
+
+    renderButtons();
+
+
+
+
   });
 
 
