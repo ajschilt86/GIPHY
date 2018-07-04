@@ -8,10 +8,9 @@ $(document).ready(function () {
   function renderButtons() {
     $(".buttons").empty();
     for (var i = 0; i < animals.length; i++) {
-
-      $(".buttons").append("<button>" + animals[i] + "</button>")
-      gifLoop();
+      $(".buttons").append("<button>" + animals[i] + "</button>")      
     }
+    gifLoop();
   }
 
   renderButtons();
@@ -30,39 +29,25 @@ $(document).ready(function () {
         console.log(queryURL);
         console.table(response);
 
-
         for (var i = 0; i < 10; i++) {
-
           $(".gifs").append("<img src='" + response.data[i].images.fixed_height.url + "'>");
           $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
-
         }        
 
       });
     });
   }
 
-
   //add animal button
   $("#add-animal").on("click", function (event) {
     event.preventDefault();
 
-
     var addAnimal = $("#animal-input").val().trim();
-
 
     animals.push(addAnimal);
     console.log(animals);
-
     renderButtons();
-
-
-
-
+    document.forms["animal-form"].reset();
   });
-
-
-
-
 
 });
