@@ -30,7 +30,7 @@ $(document).ready(function () {
         console.table(response);
 
         for (var i = 0; i < 10; i++) {
-          $(".gifs").append("<img src='" + response.data[i].images.fixed_height.url + "'>");
+          $(".gifs").append("<img class='imgSize' src='" + response.data[i].images.fixed_height.url + "'>");
           $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
         }        
 

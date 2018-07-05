@@ -1,5 +1,26 @@
+body {
+    background-color: blue;
+
+}
+
+.header {
+    text-align: center;
+    font-size: 80px;
+}
+
+.container {
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 560px;
+    width: 1000px;
+    margin-left: -500px;
+    margin-top: -250px;  
+}
+
 .buttons button {  
-    font-size: 60px;
+    font-size: 30px;
     margin-right: 10px;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
@@ -12,11 +33,19 @@
 #add-animal {
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 30px;
-
+    margin-bottom: 40px;
+    font-size: 20px;
 }
 
 .gifs {
-       
+    margin: 5px;
+    
+}
+
+.imgSize {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    /*-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);    */
 }
