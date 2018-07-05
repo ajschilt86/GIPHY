@@ -1,14 +1,14 @@
 $(document).ready(function () {
 
-  var animals = ["tiger", "lion", "zebra", "rhino"];
+  var teams = ["white sox", "Yankees", "Cubs", "Cardinals"];
 
-  var userChoice = animals[0];
+  var userChoice = teams[0];
 
   //shows buttons on top//
   function renderButtons() {
     $(".buttons").empty();
-    for (var i = 0; i < animals.length; i++) {
-      $(".buttons").append("<button>" + animals[i] + "</button>")      
+    for (var i = 0; i < teams.length; i++) {
+      $(".buttons").append("<button>" + teams[i] + "</button>")
     }
     gifLoop();
   }
@@ -32,8 +32,7 @@ $(document).ready(function () {
         for (var i = 0; i < 10; i++) {
           $(".gifs").append("<img class='imgSize' src='" + response.data[i].images.fixed_height.url + "'>");
           $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
-        }        
-
+        }
       });
     });
   }
@@ -42,12 +41,15 @@ $(document).ready(function () {
   $("#add-baseball").on("click", function (event) {
     event.preventDefault();
 
-    var addAnimal = $("#baseball-input").val().trim();
-
-    animals.push(addAnimal);
-    console.log(animals);
-    renderButtons();
-    document.forms["baseball-form"].reset();
+    var addTeam = $("#baseball-input").val().trim();
+    if (addTeam === "") {
+      return false;
+    }
+    else {
+      teams.push(addTeam);
+      console.log(teams);
+      renderButtons();
+      document.forms["baseball-form"].reset();
+    }
   });
-
 });
