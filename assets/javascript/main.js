@@ -1,14 +1,15 @@
 $(document).ready(function () {
 
-  var animals = ["tiger", "lion", "zebra", "rhino"];
+  var cities = ["Chicago", "Dallas", "Detroit", "New York"];
 
-  var userChoice = animals[0];
+  var userChoice = cities[0];
+  var userChoice1 = cities[0];
 
   //shows buttons on top//
   function renderButtons() {
     $(".buttons").empty();
-    for (var i = 0; i < animals.length; i++) {
-      $(".buttons").append("<button>" + animals[i] + "</button>")      
+    for (var i = 0; i < cities.length; i++) {
+      $(".buttons").append("<button>" + cities[i] + "</button>")
     }
     gifLoop();
   }
@@ -18,9 +19,13 @@ $(document).ready(function () {
     $(".buttons button").click(function () {
       userChoice = $(this).text();
       console.log(userChoice);
-      $(".gifs").empty();
+      $(".weather").empty();
 
-      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userChoice + "&api_key=tnF75nCvZOzJEAnV6pFNBwlI8svFoFFN";
+      
+
+      var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userChoice + "&appid=fe5914c4414cd46e28151371a9f99652";
+           
+
 
       $.ajax({
         url: queryURL,
@@ -35,19 +40,24 @@ $(document).ready(function () {
         }        
 
       });
-    });
+
+    
+
+    });  
+
   }
 
+  
   //add animal button
-  $("#add-animal").on("click", function (event) {
+  $("#add-city").on("click", function (event) {
     event.preventDefault();
 
-    var addAnimal = $("#animal-input").val().trim();
+    var addTeam = $("#city-input").val().trim();
 
-    animals.push(addAnimal);
-    console.log(animals);
+    cities.push(addTeam);
+    console.log(cities);
     renderButtons();
-    document.forms["animal-form"].reset();
+    document.forms["city-form"].reset();
   });
 
 });
