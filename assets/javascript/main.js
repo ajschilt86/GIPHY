@@ -29,10 +29,27 @@ $(document).ready(function () {
         console.log(queryURL);
         console.table(response);
 
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 3; i++) {
           $(".gifs").append("<img class='imgSize' src='" + response.data[i].images.fixed_height.url + "'>");
           $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
+          var q = 1;
         }
+
+        //adding 10
+        $(".buttons button").click(function () {
+          q += 1;
+          var g = q * 3;
+          if (g < 25) {
+            for (i; i < g; i++) {
+              $(".gifs").append("<img class='imgSize' src='" + response.data[i].images.fixed_height.url + "'>");
+              $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
+            }
+          }
+          else {
+            return false;
+          }
+
+        });
       });
     });
   }
