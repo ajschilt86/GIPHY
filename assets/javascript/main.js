@@ -35,9 +35,7 @@ $(document).ready(function () {
 
           $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
 
-
           $(".imgSize").click(function () {
-
 
 
             var state = $(this).attr("data-state");
