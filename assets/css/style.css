@@ -26,7 +26,6 @@ body {
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
-
 #baseball-input {
     margin-top: 30px;
 }
@@ -41,8 +40,7 @@ body {
 .gifs {
     margin: 5px;
    display: flex;
-   flex-direction: row;
-    
+   flex-direction: row;    
 }
 
 .imgSize {
