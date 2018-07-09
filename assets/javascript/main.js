@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  var teams = ["white sox", "Yankees", "Cubs", "Cardinals"];
+  var teams = ["White Sox", "Yankees", "Cubs", "Cardinals"];
 
   var userChoice = teams[0];
 
@@ -35,52 +35,55 @@ $(document).ready(function () {
 
           $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
 
-          $(".imgSize").click(function () {
 
-            var state = $(this).attr("data-state");
-            if (state === "still") {
-              $(this).attr("src", $(this).attr("data-animate"));
-              $(this).attr("data-state", "animate");
-            } else {
-              $(this).attr("src", $(this).attr("data-still"));
-              $(this).attr("data-state", "still");
-            }
-          });
           var q = 1;
         }
+        $(".imgSize").click(function () {
 
-        //adding 10
-        // $(".buttons button").click(function () {
-        //   q += 1;
-        //   var g = q * 3;
-        //   if (g < 25) {
-        //     for (i; i < g; i++) {
-        //       $(".gifs").append("<img class='imgSize' src='" + response.data[i].images.fixed_height_still.url + "'>");
-        //       $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
-        //     }
-        //   }
-        //   else {
-        //     return false;
-        //   }
 
-        // });
+       
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
       });
+
+      //adding 10
+      // $(".buttons button").click(function () {
+      //   q += 1;
+      //   var g = q * 3;
+      //   if (g < 25) {
+      //     for (i; i < g; i++) {
+      //       $(".gifs").append("<img class='imgSize' src='" + response.data[i].images.fixed_height_still.url + "'>");
+      //       $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
+      //     }
+      //   }
+      //   else {
+      //     return false;
+      //   }
+
+      // });
     });
+  });
   }
 
-  //add animal button
-  $("#add-baseball").on("click", function (event) {
-    event.preventDefault();
+//add animal button
+$("#add-baseball").on("click", function (event) {
+  event.preventDefault();
 
-    var addTeam = $("#baseball-input").val().trim();
-    if (addTeam === "") {
-      return false;
-    }
-    else {
-      teams.push(addTeam);
-      console.log(teams);
-      renderButtons();
-      document.forms["baseball-form"].reset();
-    }
-  });
+  var addTeam = $("#baseball-input").val().trim();
+  if (addTeam === "") {
+    return false;
+  }
+  else {
+    teams.push(addTeam);
+    console.log(teams);
+    renderButtons();
+    document.forms["baseball-form"].reset();
+  }
+});
 });
