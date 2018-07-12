@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  var teams = ["White Sox", "Yankees", "Cubs", "Cardinals"];
+  var teams = ["White Sox", "Yankees", "Cubs", "Cardinals", "Mets", "Astros"];
 
   var userChoice = teams[0];
 
