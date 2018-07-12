@@ -22,7 +22,7 @@ body {
 }
 
 .containerTop {
-    border: 1px solid black;
+    
     margin-bottom: 20px;
     position: absolute;
     left: 50%;
@@ -45,9 +45,15 @@ body {
 
 #baseball-input {
     margin-top: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 40%;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 #add-baseball {
+    position: relative;
+    left: 42%;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     margin-top: 10px;
     margin-bottom: 40px;
@@ -55,9 +61,7 @@ body {
 }
 
 .gifs {
-    margin: 5px;
-    /* display: flex;
-    flex-wrap: wrap; */
+    margin: 45px;
     position: absolute;
     left: 50%;
     margin-left: -75px;  
@@ -69,13 +73,10 @@ body {
     margin-bottom: 30px;
     margin-top: 15px;
     border-radius: 50%;
-       
-    /*-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);    */
 }
 
 .imgSize:hover {
     transform: translateY(-10px);
     animation: all .2s;
-    box-shadow: 0px 0px 35px green;
+    box-shadow: 0px 0px 55px black;
 }
