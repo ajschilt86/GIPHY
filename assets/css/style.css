@@ -15,10 +15,26 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 560px;
-    width: 1000px;
-    margin-left: -500px;
-    margin-top: -250px;  
+    height: 1300px;
+    width: 500px;
+    margin-left: -250px;
+    margin-top: -275px;  
+}
+
+.containerTop {
+    border: 1px solid black;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 50%;
+    width: 800px;
+    margin-left: -400px;
+    background-color: white;
+}
+
+.containerBottom {
+    position: absolute;
+    top: 15%;
+    left: 50%;
 }
 
 .buttons button {  
@@ -40,14 +56,20 @@ body {
 
 .gifs {
     margin: 5px;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;  
 }
 
 .imgSize {
     height: 150px;
     width: 150px;
+    margin-bottom: 30px;
+    margin-top: 15px;
     border-radius: 50%;
+       
     /*-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);    */
 }
@@ -55,5 +77,5 @@ body {
 .imgSize:hover {
     transform: translateY(-10px);
     animation: all .2s;
-    box-shadow: 0px 0px 35px blue;
+    box-shadow: 0px 0px 35px green;
 }

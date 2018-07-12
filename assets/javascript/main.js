@@ -30,10 +30,10 @@ $(document).ready(function () {
         console.table(response);
 
         for (var i = 0; i < 5; i++) {
+          $(".gifs").append("<div class='gifRating'>Rating: " + response.data[i].rating + "</div>");
+          $(".gifs").append("<div><img src='" + response.data[i].images.fixed_height_still.url + "' data-still='" + response.data[i].images.fixed_height_still.url + "' data-animate='" + response.data[i].images.fixed_height.url + "' data-state='still' class='imgSize'></div>");
 
-          $(".gifs").append("<img src='" + response.data[i].images.fixed_height_still.url + "' data-still='" + response.data[i].images.fixed_height_still.url + "' data-animate='" + response.data[i].images.fixed_height.url + "' data-state='still' class='imgSize'>");
-
-          $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
+          
 
 
           var q = 1;
@@ -51,22 +51,6 @@ $(document).ready(function () {
           $(this).attr("data-state", "still");
         }
       });
-
-      //adding 10
-      // $(".buttons button").click(function () {
-      //   q += 1;
-      //   var g = q * 3;
-      //   if (g < 25) {
-      //     for (i; i < g; i++) {
-      //       $(".gifs").append("<img class='imgSize' src='" + response.data[i].images.fixed_height_still.url + "'>");
-      //       $(".gifs").append("<p> Rating: " + response.data[i].rating + "</p>");
-      //     }
-      //   }
-      //   else {
-      //     return false;
-      //   }
-
-      // });
     });
   });
   }
