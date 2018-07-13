@@ -91,14 +91,30 @@ body {
     .container {
         margin-top: -227px;
     }
+
+    .containerTop {    
+        margin-bottom: 20px;
+        position: absolute;
+        left: 50%;
+        width: 400px;
+        margin-left: -200px;        
+    }
+
     .buttons button {  
         position: relative;
         left: 8.5%;
-        font-size: 20px;        
+        font-size: 23px;        
     }
 
     #add-baseball {
         font-size: 20px;
+        position: relative;
+        left: 33.5%;
+    }
+
+    #baseball-input {        
+        position: relative;
+        left: 29.5%;        
     }
 
     .gifs {
