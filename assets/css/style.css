@@ -15,7 +15,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 1300px;
+    height: 300px;
     width: 500px;
     margin-left: -250px;
     margin-top: -275px;  
@@ -33,7 +33,7 @@ body {
 
 .containerBottom {
     position: absolute;
-    top: 15%;
+    top: 75%;
     left: 50%;
 }
 
@@ -63,13 +63,17 @@ body {
 }
 
 .gifs {
+    display: flex;
+    flex-direction: row;
     margin: 45px;
     position: absolute;
     left: 50%;
-    margin-left: -75px;  
+    /* margin-left: -75px;   */
+    margin-left: -511px; 
 }
 
 .imgSize {
+    
     height: 150px;
     width: 150px;
     margin-bottom: 30px;

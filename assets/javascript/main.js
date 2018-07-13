@@ -33,41 +33,35 @@ $(document).ready(function () {
           $(".gifs").append("<div class='gifRating'>Rating: " + response.data[i].rating + "</div>");
           $(".gifs").append("<div><img src='" + response.data[i].images.fixed_height_still.url + "' data-still='" + response.data[i].images.fixed_height_still.url + "' data-animate='" + response.data[i].images.fixed_height.url + "' data-state='still' class='imgSize'></div>");
 
-          
-
-
           var q = 1;
         }
         $(".imgSize").click(function () {
-
-
-       
-        var state = $(this).attr("data-state");
-        if (state === "still") {
-          $(this).attr("src", $(this).attr("data-animate"));
-          $(this).attr("data-state", "animate");
-        } else {
-          $(this).attr("src", $(this).attr("data-still"));
-          $(this).attr("data-state", "still");
-        }
+          var state = $(this).attr("data-state");
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+          } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        });
       });
     });
+  }
+
+  //add animal button
+  $("#add-baseball").on("click", function (event) {
+    event.preventDefault();
+
+    var addTeam = $("#baseball-input").val().trim();
+    if (addTeam === "") {
+      return false;
+    }
+    else {
+      teams.push(addTeam);
+      console.log(teams);
+      renderButtons();
+      document.forms["baseball-form"].reset();
+    }
   });
-  }
-
-//add animal button
-$("#add-baseball").on("click", function (event) {
-  event.preventDefault();
-
-  var addTeam = $("#baseball-input").val().trim();
-  if (addTeam === "") {
-    return false;
-  }
-  else {
-    teams.push(addTeam);
-    console.log(teams);
-    renderButtons();
-    document.forms["baseball-form"].reset();
-  }
-});
 });
