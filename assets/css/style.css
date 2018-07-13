@@ -86,3 +86,27 @@ body {
     animation: all .2s;
     box-shadow: 0px 0px 55px black;
 }
+
+@media screen and (max-width: 500px) {
+    .container {
+        margin-top: -227px;
+    }
+    .buttons button {  
+        position: relative;
+        left: 8.5%;
+        font-size: 20px;        
+    }
+
+    #add-baseball {
+        font-size: 20px;
+    }
+
+    .gifs {
+        display: flex;
+        flex-direction: column;
+        margin: 45px;
+        position: absolute;
+        left: 50%;
+        margin-left: -75px;        
+    }
+}
